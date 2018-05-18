@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Auth;
+use App\Product;
+use App\Issue;
+use App\Issue_Images;
 
 class HomepageController extends Controller
 {
@@ -13,7 +18,8 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $productList = Product::all();
+        return view('home', ['productList' => $productList]);
     }
 
     /**
@@ -21,6 +27,25 @@ class HomepageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function product($name) {
+
+        $product = Product::where('product_name', $name)->first();
+        $issueList = Issue::where('product_id', $product->id)->get();
+
+        return view('productpage', compact('product'), ['issueList' => $issueList]);
+    }
+
+    public function issue($name) {
+
+        $issue = Issue::where('id', $name)->first();
+        $product = Product::where('id', $issue->product_id)->first();
+        $issue_images = Issue_Images::where('issue_id', $issue->id)->get();
+
+        return view('issuepage', compact('issue', 'product'), ['issue_images' => $issue_images]);
+
+    }
+
     public function create()
     {
         //

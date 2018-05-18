@@ -1,9 +1,20 @@
 @extends('layouts.app')
-
+@php
+	$id = $productInfo['id'];
+@endphp
 @section('content')
 <main id="main-container" style="min-height: 402px;">
 	@include('admin.header')
 	<div class="content content-boxed">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="block">
+					<div class="block-content block-content-full" style="overflow: auto;">
+						<h3 class="block-title">{{ $productInfo->product_name }}</h3>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div clas="row">
 			<div class="col-lg-12">
 				<div class="block">
@@ -11,15 +22,15 @@
 						<div class="col-sm-6">
 							<div class="col-sm-4">
 								<div class="block">
-									<a class="btn btn-block btn-infinity" href="/product/add"><i class="fa fa-plus"></i><span> Add Product</span></a>
+									<a class="btn btn-block btn-infinity" href="/product/addissue/{{ $productInfo->id }}"><i class="fa fa-plus"></i><span> Add Issue</span></a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12">
-							<table class="table table-bordered dataTable no-footer table-striped ajax-table-products">
+							<table class="table table-bordered dataTable no-footer table-striped ajax-table-issue">
 								<thead>
 									<tr>
-										<th class="text-center">Product Name</th>
+										<th class="text-center">Issue</th>
 										<th class="text-center">Action</th>
 									</tr>
 								</thead>
@@ -50,7 +61,7 @@
 
 		var initDataTableCampaigns = function() {
 
-			$('.ajax-table-products').DataTable({
+			$('.ajax-table-issue').DataTable({
 	            pagingType: "full_numbers",
 	            columnDefs: [ { orderable: false, targets: [ 0 ] } ],
 	            pageLength: 20,
@@ -59,11 +70,11 @@
 	            serverSide: true,
 	            language: {
 	                processing: "<img src='../img/ajax-loader.gif'>",
-	                emptyTable: "No job files yet."
+	                emptyTable: "No issues yet."
 	            },
-	            ajax: "{{ route('product.product_list') }}",
+	            ajax: "{{ route('issue.issue_list', $id) }}",
 	            columns: [
-					{ data : "product_name", name: 'products.product_name' },
+					{ data : "title", name: 'issues.title' },
 					{ data : "action", name: 'action', orderable: false, searchable: false }
 				],
 				columnDefs: [

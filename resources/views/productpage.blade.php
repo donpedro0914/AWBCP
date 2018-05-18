@@ -1,26 +1,36 @@
 @extends('layouts.app')
-
+@php
+	$id = $product['id'];
+@endphp
 @section('content')
 <main id="main-container" style="min-height: 402px;">
-	@include('admin.header')
+	<div class="content bg-gray-lighter">
+		<div class="row items-push">
+			<div class="col-sm-7">
+				<h1 class="page-heading">{{ $product->product_name }}</h1>
+			</div>
+			<div class="col-sm-5 text-right hidden-xs">
+				<ol class="breadcrumb push-10-t">
+					<li>
+						<a href="/" class="link-effect">Product List</a>
+					</li>
+					<li>
+						{{ $product->product_name }}
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
 	<div class="content content-boxed">
-		<div clas="row">
+		<div class="row">
 			<div class="col-lg-12">
 				<div class="block">
 					<div class="block-content block-content-full" style="overflow: auto;">
-						<div class="col-sm-6">
-							<div class="col-sm-4">
-								<div class="block">
-									<a class="btn btn-block btn-infinity" href="/product/add"><i class="fa fa-plus"></i><span> Add Product</span></a>
-								</div>
-							</div>
-						</div>
 						<div class="col-md-12">
-							<table class="table table-bordered dataTable no-footer table-striped ajax-table-products">
+							<table class="table table-bordered dataTable no-footer table-striped ajax-table-issue">
 								<thead>
 									<tr>
-										<th class="text-center">Product Name</th>
-										<th class="text-center">Action</th>
+										<th class="text-center">Issue</th>
 									</tr>
 								</thead>
 							</table>
@@ -50,7 +60,7 @@
 
 		var initDataTableCampaigns = function() {
 
-			$('.ajax-table-products').DataTable({
+			$('.ajax-table-issue').DataTable({
 	            pagingType: "full_numbers",
 	            columnDefs: [ { orderable: false, targets: [ 0 ] } ],
 	            pageLength: 20,
@@ -61,48 +71,16 @@
 	                processing: "<img src='../img/ajax-loader.gif'>",
 	                emptyTable: "No job files yet."
 	            },
-	            ajax: "{{ route('product.product_list') }}",
+	            ajax: "{{ route('issue.issue_list', $id) }}",
 	            columns: [
-					{ data : "product_name", name: 'products.product_name' },
-					{ data : "action", name: 'action', orderable: false, searchable: false }
+					{ data : "title", name: 'issues.title' }
 				],
 				columnDefs: [
-					{ className: "text-center", targets: [ 0 ], 
+					{ className: "", targets: [ 0 ], 
 	                    render: function(data,type,full,meta){
-	                        return "<a href= '" + document.location.origin + "/product/info/" + full["id"] + "'>" + data + "</a>";
+	                        return "<a href= '" + document.location.origin + "/issue/" + full["id"] + "'>" + data + "</a>";
 	                    }
 	                },
-	                { 
-	                    className: "text-center",  
-	                    targets: [ 1 ], //action column
-	                    render: function(data,type,full,meta){
-	                        var result = "";
-	                        var view ="<a href= '" + document.location.origin + "/job-files/info/" + full["id"] + "' class='btn btn-xs btn-default btn-edit' data-toggle='tooltip' data-original-title='View Information'>" + 
-	                            "<i class='fa fa-eye'></i>" + 
-	                        "</a>";
-	                        var edit = "<a href= '" + document.location.origin + "/job-files/info/" + full["id"] + "' class='btn btn-xs btn-default btn-edit' data-toggle='tooltip' data-original-title='Edit Information'>" + 
-	                            "<i class='fa fa-pencil'></i>" + 
-	                        "</a>";
-	                        var del = "<button data-module='job-file' data-name='"+ full['lead_fname'] +"' class='btn btn-xs btn-default btn-delete js-swal-confirm' data-toggle='tooltip' data-original-title='Delete Information' id ='" + full['lead_id'] + "'>" + 
-	                            "<i class='fa fa-close'></i>" + 
-	                        "</button>";
-	                        // if( $('body').attr('id').charAt(6) == '0'){
-	                        //     result = result + view;
-	                        // }else{
-	                        //     result = result + edit; 
-	                        // }
-
-	                        // if( $('body').attr('id').charAt(7) != '0'){
-	                        //     result = result + del;
-	                        // }
-
-	                        // return result;
-
-	                        result = result + edit + del;
-	                        return result;
-	                    }
-	                }
-
 				]
 	        });
 		}

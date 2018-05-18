@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomepageController@index');
+Route::get('/product/x/{any}', 'HomepageController@product');
+Route::get('/issue/{any}', 'HomepageController@issue');
 
 
 Route::get('/admin', 'AdminController@index');
@@ -21,7 +23,12 @@ Auth::routes();
 //Admin
 Route::get('/dashboard', 'AdminController@dashboard');
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/home', 'AdminController@dashboard')->name('home');
 
 Route::post('product/store', 'ProductController@store');
+Route::get('/product/add', 'ProductController@addproduct');
+Route::get('/product/addissue/{id}', 'ProductController@addissue');
+Route::get('product/product_list', 'ProductController@product_list')->name('product.product_list');
+Route::get('product/info/{id}', 'ProductController@edit');
+Route::get('issue/issue_list/{id}', 'IssueController@issue_list')->name('issue.issue_list');
+Route::post('issue/store', 'IssueController@store');
 

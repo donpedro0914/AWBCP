@@ -24,7 +24,7 @@
     <link href="{{ asset('css/sweetalert.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="page-container" class="sidebar-l side-scroll header-navbar-fixed">
+    <div class="sidebar-l side-scroll header-navbar-fixed">
         @yield('content')
     </div>
 
@@ -45,6 +45,7 @@
     <script src="{{ asset('js/form_validation.js') }}"></script>
     <script src="{{ asset('js/validate.min.js') }}"></script>
     <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
     <script data-pace-options='{ "ghostTime": 10000000 }' type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.js"></script>
     @stack('scripts');
     <footer>
