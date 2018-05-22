@@ -75,7 +75,7 @@ class ProductController extends Controller
             'product_image' => $product_img,
         ]);
 
-        return redirect('/home');
+        return redirect('/dashboard');
     }
 
     /**
@@ -120,6 +120,15 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
+
+    public function delete($id)
+    {
+        $product = Product::find($id)->delete();
+
+        return response()->json($product);
+
+    }
+
     public function destroy(Product $product)
     {
         //

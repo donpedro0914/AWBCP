@@ -83,7 +83,7 @@
 	                        var edit = "<a href= '" + document.location.origin + "/job-files/info/" + full["id"] + "' class='btn btn-xs btn-default btn-edit' data-toggle='tooltip' data-original-title='Edit Information'>" + 
 	                            "<i class='fa fa-pencil'></i>" + 
 	                        "</a>";
-	                        var del = "<button data-module='job-file' data-name='"+ full['lead_fname'] +"' class='btn btn-xs btn-default btn-delete js-swal-confirm' data-toggle='tooltip' data-original-title='Delete Information' id ='" + full['lead_id'] + "'>" + 
+	                        var del = "<button data-module='product' data-name='"+ full['product_name'] +"' class='btn btn-xs btn-default btn-delete js-swal-confirm' data-toggle='tooltip' data-original-title='Delete Information' id ='" + full['id'] + "'>" + 
 	                            "<i class='fa fa-close'></i>" + 
 	                        "</button>";
 	                        // if( $('body').attr('id').charAt(6) == '0'){

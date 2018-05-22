@@ -32,3 +32,5 @@ Route::get('product/info/{id}', 'ProductController@edit');
 Route::get('issue/issue_list/{id}', 'IssueController@issue_list')->name('issue.issue_list');
 Route::post('issue/store', 'IssueController@store');
 
+Route::delete('product/delete/{id}', 'ProductController@delete');
+

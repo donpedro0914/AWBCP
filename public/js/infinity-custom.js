@@ -206,8 +206,8 @@ $(document).ready(function(){
           var module = $(e.currentTarget).attr('data-module');
           var name = $(e.currentTarget).attr('data-name');
 
-          if(module == 'department') {
-            var url = document.location.origin + "/department/delete/" + id;
+          if(module == 'product') {
+            var url = document.location.origin + "/product/delete/" + id;
             var datatable = "ajax-table-department";
           } else if(module == 'position') {
             var url = document.location.origin + "/position/delete/" + id;
