@@ -208,7 +208,7 @@ $(document).ready(function(){
 
           if(module == 'product') {
             var url = document.location.origin + "/product/delete/" + id;
-            var datatable = "ajax-table-department";
+            var datatable = "ajax-table-products";
           } else if(module == 'position') {
             var url = document.location.origin + "/position/delete/" + id;
             var datatable = "ajax-table-position";
