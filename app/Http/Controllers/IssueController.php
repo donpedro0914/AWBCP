@@ -75,7 +75,7 @@ class IssueController extends Controller
             $im = "";
         }
 
-        return back();
+        return redirect('product/info/'.$product_id);
     }
 
     /**
@@ -95,9 +95,9 @@ class IssueController extends Controller
      * @param  \App\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Issue $issue)
+    public function edit(Issue $issue, $id)
     {
-        //
+        
     }
 
     /**

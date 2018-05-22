@@ -29,6 +29,7 @@ Route::get('/product/add', 'ProductController@addproduct');
 Route::get('/product/addissue/{id}', 'ProductController@addissue');
 Route::get('product/product_list', 'ProductController@product_list')->name('product.product_list');
 Route::get('product/info/{id}', 'ProductController@edit');
+Route::get('issue/info/{id}', 'IssueController@edit');
 Route::get('issue/issue_list/{id}', 'IssueController@issue_list')->name('issue.issue_list');
 Route::post('issue/store', 'IssueController@store');
 

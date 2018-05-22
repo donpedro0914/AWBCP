@@ -80,7 +80,7 @@
 				columnDefs: [
 					{ className: "text-center", targets: [ 0 ], 
 	                    render: function(data,type,full,meta){
-	                        return "<a href= '" + document.location.origin + "/product/info/" + full["id"] + "'>" + data + "</a>";
+	                        return "<a href= '" + document.location.origin + "/issue/info/" + full["id"] + "'>" + data + "</a>";
 	                    }
 	                },
 	                { 
