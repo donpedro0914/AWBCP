@@ -23,7 +23,7 @@
 		<div class="row">
 			<ul>
 				@foreach($issue_images as $ii)
-					<li>{{ HTML::image('product/issues/'. $issue->id .'/'.$issue->title.'/'.$ii->images, '', array('class' => 'img-responsive')) }}
+					<li>{{ HTML::image('product/issues/'. $issue->product_id .'/'.$issue->title.'/'.$ii->images, '', array('class' => 'img-responsive')) }}
 				@endforeach
 			</ul>
 		</div>
