@@ -209,9 +209,9 @@ $(document).ready(function(){
           if(module == 'product') {
             var url = document.location.origin + "/product/delete/" + id;
             var datatable = "ajax-table-products";
-          } else if(module == 'position') {
-            var url = document.location.origin + "/position/delete/" + id;
-            var datatable = "ajax-table-position";
+          } else if(module == 'issue') {
+            var url = document.location.origin + "/issue/delete/" + id;
+            var datatable = "ajax-table-issue";
           } else if(module == 'job-file') {
             var url = document.location.origin + "/job-file/jobfile_update/" + id;
             var datatable = "ajax-table-leads-infinity"; 
@@ -219,7 +219,7 @@ $(document).ready(function(){
 
           var data = "id="+id;
           $.ajax({
-            type: "DELETE",
+            type: "POST",
             url: url,
             data: data,
             success: function(data) {

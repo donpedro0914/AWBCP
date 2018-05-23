@@ -122,4 +122,23 @@ class IssueController extends Controller
     {
         //
     }
+
+    public function delete($id)
+    {
+
+        $title = Issue::where('id', $id)->first();
+
+        $filename = public_path().'/product/issues/'.$title->product_id.'/'.$title->title;
+
+        // dd($filename);
+
+        File::delete($filename);
+
+        $issue = Issue::find($id)->delete();
+
+        Issue_Images::where('issue_id', $id)->delete();
+
+        return response()->json($issue);
+
+    }
 }

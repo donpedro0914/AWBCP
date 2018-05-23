@@ -34,4 +34,5 @@ Route::get('issue/issue_list/{id}', 'IssueController@issue_list')->name('issue.i
 Route::post('issue/store', 'IssueController@store');
 
 Route::delete('product/delete/{id}', 'ProductController@delete');
+Route::post('issue/delete/{id}', 'IssueController@delete');
 
