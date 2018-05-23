@@ -2,6 +2,7 @@
 
 @section('content')
 <main id="main-container" style="min-height: 402px;">
+	@include('global.header')
 	<div class="content">
 		<div class="row js-masonry">
 			@foreach ($productList as $product)

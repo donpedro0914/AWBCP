@@ -2,6 +2,7 @@
 
 @section('content')
 <main id="main-container" style="min-height: 402px;">
+	@include('global.header')
 	<div class="content bg-gray-lighter">
 		<div class="row items-push">
 			<div class="col-sm-7">
