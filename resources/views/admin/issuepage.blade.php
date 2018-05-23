@@ -10,7 +10,7 @@
 			<div class="col-sm-5 text-right hidden-xs">
 				<ol class="breadcrumb push-10-t">
 					<li>
-						<a href="/product/x/{{ $product->product_name }}" class="link-effect">Issue List</a>
+						<a href="/product/info/{{ $product->id }}" class="link-effect">Issue List</a>
 					</li>
 					<li>
 						{{ $issue->title }}

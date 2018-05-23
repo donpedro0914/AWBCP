@@ -97,7 +97,11 @@ class IssueController extends Controller
      */
     public function edit(Issue $issue, $id)
     {
-        
+        $issue = Issue::where('id', $id)->first();
+        $product = Product::where('id', $issue->product_id)->first();
+        $issue_images = Issue_Images::where('issue_id', $issue->id)->get();
+
+        return view('admin.issuepage', compact('issue', 'product'), ['issue_images' => $issue_images]);
     }
 
     /**
