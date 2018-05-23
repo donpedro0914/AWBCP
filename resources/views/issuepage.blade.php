@@ -11,6 +11,9 @@
 			<div class="col-sm-5 text-right hidden-xs">
 				<ol class="breadcrumb push-10-t">
 					<li>
+						<a href="/" class="link-effect">Product List</a>
+					</li>
+					<li>
 						<a href="/product/x/{{ $product->product_name }}" class="link-effect">Issue List</a>
 					</li>
 					<li>
