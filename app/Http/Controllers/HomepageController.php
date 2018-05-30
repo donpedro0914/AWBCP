@@ -18,7 +18,7 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $productList = Product::all();
+        $productList = Product::orderBy('product_name', 'asc')->get();
         return view('home', ['productList' => $productList]);
     }
 

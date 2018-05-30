@@ -79,7 +79,7 @@
 				columnDefs: [
 					{ className: "", targets: [ 0 ], 
 	                    render: function(data,type,full,meta){
-	                        return "<a href= '" + document.location.origin + "/issue/" + full["id"] + "'>" + data + "</a>";
+	                        return "<a class='font-w700' href= '" + document.location.origin + "/issue/" + full["id"] + "'>" + data + "</a>";
 	                    }
 	                },
 				]
