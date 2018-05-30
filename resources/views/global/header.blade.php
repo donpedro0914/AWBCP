@@ -1,10 +1,5 @@
 <header id="header-navbar">
 	<div class="content-mini content-mini-full content-boxed">
-		<ul class="nav-header pull-right">
-			<li>
-				<a href="/"><button class="btn btn-default">Product List</button></a>
-			</li>
-		</ul>
 		<ul class="nav-header pull-left">
 			<li class="header-content">
 				<a class="f5" href="/">
