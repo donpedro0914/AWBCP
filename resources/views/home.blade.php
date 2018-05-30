@@ -9,7 +9,10 @@
 				<div class="col-md-2 col-xs-12 push-10 js-masonry-sizer">
 					<a class="block" href="/product/x/{{ $product->product_name }}">
 						<div class="block-content block-content-full">
-							{{ HTML::image('product/'. $product->product_name .'/'.$product->product_image, $product->product_name, array('class' => 'img-thumbnail', 'style' => 'width:100%')) }}
+							@php
+							$product_name = str_replace(' ', '_', $product->product_name);
+							@endphp
+							{{ HTML::image('product/'. $product_name .'/'.$product->product_image, $product->product_name, array('class' => 'img-thumbnail', 'style' => 'width:100%')) }}
 							<div class="block-content block-content-full">
 								<h2 class="h2 push-10">{{ $product->product_name }}</h2>
 							</div>
