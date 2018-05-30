@@ -98,7 +98,7 @@
 
 	                        // return result;
 
-	                        result = result + edit + del;
+	                        result = result + del;
 	                        return result;
 	                    }
 	                }

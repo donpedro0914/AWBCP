@@ -33,6 +33,6 @@ Route::get('issue/info/{id}', 'IssueController@edit');
 Route::get('issue/issue_list/{id}', 'IssueController@issue_list')->name('issue.issue_list');
 Route::post('issue/store', 'IssueController@store');
 
-Route::delete('product/delete/{id}', 'ProductController@delete');
+Route::post('product/delete/{id}', 'ProductController@delete');
 Route::post('issue/delete/{id}', 'IssueController@delete');
 
