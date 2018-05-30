@@ -47,8 +47,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-5">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-12">
+                                <button style="dispaly:block;width:100%;" type="submit" class="btn btn-primary">
                                     Login
                                 </button>
                             </div>
