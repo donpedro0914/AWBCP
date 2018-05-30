@@ -5082,7 +5082,7 @@ a.list-group-item:focus {
   }
 }
 #header-navbar {
-  min-height: 80px;
+  min-height: 100px;
   background-color: #fff;
 }
 #header-navbar:before,
@@ -5106,7 +5106,7 @@ a.list-group-item:focus {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 .header-navbar-fixed #main-container {
-  padding-top: 80px;
+  padding-top: 100px;
 }
 @media screen and (min-width: 992px) {
   .header-navbar-fixed.sidebar-l.sidebar-o #header-navbar {
