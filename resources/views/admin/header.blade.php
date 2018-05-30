@@ -8,7 +8,7 @@
 		<ul class="nav-header pull-left">
 			<li class="header-content">
 				<a class="f5" href="/dashboard">
-					{{ HTML::image('img/avantice-logo.jpg', 'Infinity Logo', array('style' => 'display:block;margin:0 auto;width:140px;')) }}
+					{{ HTML::image('img/avantice-logo.jpg', 'Infinity Logo', array('style' => 'display:block;margin:0 auto;width:200px;')) }}
 				</a>
 			</li>
 		</ul>
