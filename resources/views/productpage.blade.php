@@ -74,7 +74,7 @@
 	            },
 	            ajax: "{{ route('issue.issue_list', $id) }}",
 	            columns: [
-					{ data : "title", name: 'issues.title' }
+					{ data : "title", name: 'issues.title' },
 				],
 				columnDefs: [
 					{ className: "", targets: [ 0 ], 
